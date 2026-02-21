@@ -144,11 +144,6 @@ const JOBS = [
   icon: "🏦",
   link: "jobs/rbi-assistant-2026.html"
 },
-  { title:"NTPC Executive Trainee Recruitment 2026", dept:"NTPC Limited", posts:"515 Posts", lastDate:"25 Mar 2026", urgent:false, icon:"⚡", link:"ntpc-executive-trainee-2026.html" },
-  { title:"SSC CPO Sub-Inspector Delhi Police 2025", dept:"Staff Selection Commission", posts:"3,073 Posts", lastDate:"05 Mar 2026", urgent:true, icon:"👮", link:"ssc-cpo-2025.html" },
-  { title:"RBI Assistant Recruitment 2026", dept:"Reserve Bank of India", posts:"650 Posts", lastDate:"20 Mar 2026", urgent:false, icon:"🏦", link:"rbi-assistant-2026.html" },
-  { title:"UPSC Civil Services (IAS/IPS) 2026", dept:"Union Public Service Commission", posts:"979 Posts", lastDate:"18 Mar 2026", urgent:false, icon:"🇮🇳", link:"upsc-civil-services-2026.html" },
-  { title:"Delhi IHE DU Non-Teaching Recruitment 2026", dept:"Delhi University", posts:"Various Posts", lastDate:"12 Mar 2026", urgent:false, icon:"🎓", link:"delhi-ihe-du-2026.html" },
 ];
 
 function getStatus(d,u){if(u)return'urgent';if(!d||d==='Closed'||d==='Rolling Basis'||d==='Check Official Site')return'ok';const p=d.split(' ');if(p.length<3)return'ok';const m={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};const diff=Math.ceil((new Date(parseInt(p[2]),m[p[1]],parseInt(p[0]))-new Date())/(864e5));if(diff<0)return'ok';if(diff<=5)return'urgent';if(diff<=10)return'soon';return'ok';}
