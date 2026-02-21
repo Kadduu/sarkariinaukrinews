@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../config.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════════════════════════════════════════
+       EDIT THESE 3 LINES FOR EVERY NEW JOB PAGE
+  ═══════════════════════════════════════════ -->
+  <meta name="description" content="RRB Group D Recruitment 2026 – Complete details on eligibility, age limit, salary, selection process and how to apply. 10th Pass eligible. 32,438 vacancies.">
+  <title>RRB Group D Recruitment 2026 | Sarkari Naukri News</title>
+  <!-- ══════════════════════════════════════════ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --saffron: #FF6B00;
+      --saffron-light: #FF8C38;
+      --navy:    #0D1B3E;
+      --navy-mid:#162447;
+      --card:    #1A2C55;
+      --gold:    #F5C842;
+      --green:   #1DB954;
+      --red:     #E53935;
+      --text:    #E8EAF0;
+      --muted:   #8A93B0;
+      --border:  rgba(255,255,255,0.07);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--navy); color:var(--text); font-family:'Hind',sans-serif; line-height:1.7; }
+    a { color:var(--saffron); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    /* ── NAV ── */
+    nav {
+      position:sticky; top:0; z-index:100;
+      background:rgba(13,27,62,0.96); backdrop-filter:blur(12px);
+      border-bottom:2px solid var(--saffron);
+      padding:0 28px; display:flex; align-items:center; justify-content:space-between;
+      height:58px;
+    }
+    .brand { font-family:'Baloo 2',cursive; font-size:1.25rem; font-weight:800; color:#fff; text-decoration:none; }
+    .brand span { color:var(--saffron); }
+    .nav-links { display:flex; gap:6px; }
+    .nav-links a { color:var(--muted); font-size:0.82rem; font-weight:600; padding:6px 12px; border-radius:6px; letter-spacing:0.5px; text-transform:uppercase; transition:color .2s,background .2s; }
+    .nav-links a:hover { color:#fff; background:rgba(255,107,0,0.15); text-decoration:none; }
+    .tg-btn { display:flex; align-items:center; gap:7px; background:#229ED9; color:#fff; font-size:0.78rem; font-weight:700; padding:7px 14px; border-radius:20px; text-decoration:none; transition:opacity .2s; }
+    .tg-btn:hover { opacity:.85; text-decoration:none; }
+    .tg-btn svg { width:15px; height:15px; fill:#fff; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { max-width:960px; margin:18px auto 0; padding:0 20px; font-size:0.78rem; color:var(--muted); }
+    .breadcrumb a { color:var(--muted); }
+    .breadcrumb a:hover { color:var(--saffron); }
+    .breadcrumb span { margin:0 6px; }
+
+    /* ── JOB HERO ── */
+    .job-hero {
+      max-width:960px; margin:18px auto 0; padding:0 20px;
+    }
+    .job-hero-inner {
+      background:var(--card);
+      border:1px solid rgba(255,107,0,0.25);
+      border-radius:16px; padding:28px 32px;
+      display:flex; gap:24px; align-items:flex-start;
+    }
+    .job-emoji { font-size:3.2rem; flex-shrink:0; line-height:1; }
+    .job-hero-text { flex:1; }
+    .job-dept { font-size:0.8rem; font-weight:600; color:var(--saffron-light); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+    .job-hero-title { font-family:'Baloo 2',cursive; font-size:clamp(1.4rem,3vw,2rem); font-weight:800; color:#fff; line-height:1.2; margin-bottom:14px; }
+
+    /* Quick info pills — THE FIRST THING PEOPLE SEE */
+    .quick-pills { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:0; }
+    .pill {
+      display:flex; flex-direction:column; align-items:center;
+      padding:10px 18px; border-radius:12px; min-width:110px; text-align:center;
+    }
+    .pill-label { font-size:0.65rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; opacity:0.75; margin-bottom:3px; }
+    .pill-value { font-size:0.95rem; font-weight:700; line-height:1.2; }
+    .pill-qual  { background:rgba(29,185,84,0.15);  border:1px solid rgba(29,185,84,0.3);  color:#1DB954; }
+    .pill-age   { background:rgba(245,200,66,0.15); border:1px solid rgba(245,200,66,0.3); color:#F5C842; }
+    .pill-posts { background:rgba(100,181,246,0.15);border:1px solid rgba(100,181,246,0.3);color:#64B5F6; }
+    .pill-pay   { background:rgba(255,107,0,0.15);  border:1px solid rgba(255,107,0,0.3);  color:var(--saffron-light); }
+    .pill-date  { background:rgba(229,57,53,0.15);  border:1px solid rgba(229,57,53,0.3);  color:#EF9A9A; }
+
+    /* ── LAYOUT ── */
+    .page-body { max-width:960px; margin:24px auto 60px; padding:0 20px; display:grid; grid-template-columns:1fr 280px; gap:24px; }
+
+    /* ── CONTENT SECTIONS ── */
+    .content { display:flex; flex-direction:column; gap:20px; }
+
+    .section-card {
+      background:var(--card); border:1px solid var(--border);
+      border-radius:14px; padding:24px 28px;
+    }
+    .section-card h2 {
+      font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:700; color:#fff;
+      display:flex; align-items:center; gap:10px;
+      padding-bottom:12px; margin-bottom:18px;
+      border-bottom:1px solid var(--border);
+    }
+    .section-card h2 .ico { font-size:1.2rem; }
+
+    /* Eligibility check box */
+    .eligibility-box {
+      background:rgba(29,185,84,0.08); border:1px solid rgba(29,185,84,0.25);
+      border-radius:10px; padding:16px 20px; margin-bottom:16px;
+    }
+    .eligibility-box .check-title { font-size:0.8rem; font-weight:700; color:#1DB954; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:10px; }
+    .check-row { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.88rem; }
+    .check-row:last-child { border-bottom:none; }
+    .check-key { color:var(--muted); }
+    .check-val { font-weight:600; color:#fff; }
+
+    /* Detail table */
+    .detail-table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+    .detail-table tr { border-bottom:1px solid var(--border); }
+    .detail-table tr:last-child { border-bottom:none; }
+    .detail-table td { padding:10px 8px; vertical-align:top; }
+    .detail-table td:first-child { color:var(--muted); font-weight:600; width:38%; padding-right:16px; }
+    .detail-table td:last-child { color:#fff; }
+
+    /* Ordered / unordered lists inside cards */
+    .info-list { padding-left:20px; display:flex; flex-direction:column; gap:8px; }
+    .info-list li { font-size:0.9rem; color:var(--text); }
+    .info-list li strong { color:#fff; }
+
+    /* Step list for how to apply */
+    .steps { display:flex; flex-direction:column; gap:14px; counter-reset:steps; }
+    .step { display:flex; gap:16px; align-items:flex-start; }
+    .step-num {
+      counter-increment:steps;
+      min-width:32px; height:32px; border-radius:50%;
+      background:var(--saffron); color:#fff;
+      font-family:'Baloo 2',cursive; font-weight:800; font-size:0.9rem;
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .step-text { font-size:0.9rem; padding-top:5px; }
+    .step-text strong { color:#fff; display:block; margin-bottom:2px; }
+
+    /* Important dates table */
+    .dates-table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+    .dates-table tr { border-bottom:1px solid var(--border); }
+    .dates-table tr:last-child { border-bottom:none; }
+    .dates-table td { padding:10px 8px; }
+    .dates-table td:first-child { color:var(--muted); font-weight:500; width:55%; }
+    .dates-table td:last-child { color:#fff; font-weight:700; text-align:right; }
+    .date-urgent { color:var(--red) !important; }
+    .date-soon   { color:var(--gold) !important; }
+
+    /* Warning banner */
+    .warn-banner {
+      background:rgba(245,200,66,0.1); border:1px solid rgba(245,200,66,0.3);
+      border-radius:10px; padding:12px 16px; font-size:0.82rem; color:#F5C842;
+      display:flex; gap:10px; align-items:flex-start;
+    }
+    .warn-banner .wi { flex-shrink:0; font-size:1rem; margin-top:1px; }
+
+    /* YouTube embed */
+    .yt-embed-wrap {
+      position:relative; padding-bottom:56.25%; height:0; overflow:hidden;
+      border-radius:10px; background:#000;
+    }
+    .yt-embed-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:10px; }
+    .yt-placeholder {
+      position:absolute; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.7); display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:10px; cursor:pointer;
+      border-radius:10px;
+    }
+    .yt-placeholder .play-btn {
+      width:64px; height:64px; background:#FF0000; border-radius:50%;
+      display:flex; align-items:center; justify-content:center; font-size:1.6rem;
+      transition:transform .2s;
+    }
+    .yt-placeholder:hover .play-btn { transform:scale(1.1); }
+    .yt-placeholder p { color:#fff; font-size:0.9rem; font-weight:600; }
+
+    /* Apply button */
+    .apply-btn {
+      display:inline-flex; align-items:center; gap:10px;
+      background:linear-gradient(135deg,#059669,#047857);
+      color:#fff; padding:15px 32px; border-radius:50px;
+      font-family:'Baloo 2',cursive; font-size:1.05rem; font-weight:700;
+      text-decoration:none; transition:transform .2s,box-shadow .2s;
+      box-shadow:0 4px 20px rgba(5,150,105,0.35);
+    }
+    .apply-btn:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(5,150,105,0.45); text-decoration:none; }
+    .apply-section { text-align:center; padding:32px 28px; }
+    .apply-section p { font-size:0.8rem; color:var(--muted); margin-top:14px; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display:flex; flex-direction:column; gap:18px; }
+    .s-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px; }
+    .s-card h3 { font-family:'Baloo 2',cursive; font-size:0.95rem; font-weight:700; color:#fff; margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+
+    /* Share card */
+    .share-row { display:flex; flex-direction:column; gap:8px; }
+    .share-btn {
+      display:flex; align-items:center; gap:10px;
+      padding:10px 14px; border-radius:10px; text-decoration:none;
+      font-size:0.82rem; font-weight:700; transition:opacity .2s;
+    }
+    .share-btn:hover { opacity:.85; text-decoration:none; }
+    .share-tg { background:#229ED9; color:#fff; }
+    .share-wa { background:#25D366; color:#fff; }
+    .share-copy { background:rgba(255,255,255,0.08); color:var(--text); border:1px solid var(--border); cursor:pointer; }
+    .share-btn .sb-icon { font-size:1.1rem; }
+
+    /* Related jobs */
+    .related-list { display:flex; flex-direction:column; gap:8px; }
+    .related-item {
+      display:flex; align-items:center; gap:10px;
+      padding:10px 12px; border-radius:10px; background:rgba(255,255,255,0.04);
+      text-decoration:none; color:var(--text); font-size:0.82rem;
+      transition:background .2s;
+    }
+    .related-item:hover { background:rgba(255,107,0,0.1); text-decoration:none; color:#fff; }
+    .related-item .ri-icon { font-size:1.1rem; flex-shrink:0; }
+    .related-item .ri-text { flex:1; font-weight:500; }
+    .related-item .ri-tag { font-size:0.68rem; font-weight:700; color:var(--muted); }
+
+    /* Tg sidebar CTA */
+    .tg-cta { background:linear-gradient(135deg,#0e3d6e,#1a5276); border:1px solid rgba(34,158,217,0.3); border-radius:14px; padding:20px; text-align:center; }
+    .tg-cta .tg-icon { font-size:2rem; margin-bottom:8px; }
+    .tg-cta h3 { font-family:'Baloo 2',cursive; font-size:0.95rem; color:#fff; margin-bottom:6px; }
+    .tg-cta p { font-size:0.78rem; color:#93C9E8; margin-bottom:14px; line-height:1.5; }
+    .tg-cta a { display:block; background:#229ED9; color:#fff; padding:10px 16px; border-radius:30px; font-weight:700; font-size:0.82rem; text-decoration:none; transition:opacity .2s; }
+    .tg-cta a:hover { opacity:.85; }
+
+    /* ── FOOTER ── */
+    footer { background:var(--navy-mid); border-top:1px solid var(--border); text-align:center; padding:28px 20px; }
+    footer p { font-size:0.75rem; color:var(--muted); line-height:1.8; }
+    footer a { color:var(--saffron); }
+
+    /* ── MOBILE ── */
+    @media (max-width:720px) {
+      .page-body { grid-template-columns:1fr; }
+      .sidebar { order:99; }
+      .job-hero-inner { flex-direction:column; gap:16px; padding:20px; }
+      .nav-links { display:none; }
+      .quick-pills { gap:8px; }
+      .pill { min-width:90px; padding:8px 12px; }
+      .section-card { padding:18px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="../index.html">📋 <span>Sarkari</span> Naukri News</a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="10th-pass.html">10th Pass</a>
+    <a href="12th-pass.html">12th Pass</a>
+    <a href="graduate.html">Graduate</a>
+  </div>
+  <a class="tg-btn" href="#" data-link="telegram" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.832 13.99l-2.98-.929c-.648-.203-.66-.648.136-.961l11.647-4.49c.54-.194 1.016.131.859.611z"/></svg>
+    Join Telegram
+  </a>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>›</span>
+  <a href="10th-pass.html">10th Pass Jobs</a>
+  <span>›</span>
+  RRB Group D 2026
+</div>
+
+<!-- ════════════════════════════════════════
+     JOB HERO — Edit everything below this line
+     ════════════════════════════════════════ -->
+<div class="job-hero">
+  <div class="job-hero-inner">
+
+    <div class="job-emoji">🚂</div>
+
+    <div class="job-hero-text">
+      <!-- EDIT: Department name -->
+      <div class="job-dept">Railway Recruitment Board (RRB)</div>
+
+      <!-- EDIT: Full job title -->
+      <h1 class="job-hero-title">RRB Group D Recruitment 2026 – Level 1 Posts</h1>
+
+      <!-- QUICK PILLS — Edit each pill-value -->
+      <div class="quick-pills">
+        <div class="pill pill-qual">
+          <span class="pill-label">Min. Education</span>
+          <span class="pill-value">10th Pass</span>
+        </div>
+        <div class="pill pill-age">
+          <span class="pill-label">Age Limit</span>
+          <span class="pill-value">18 – 36 Yrs</span>
+        </div>
+        <div class="pill pill-posts">
+          <span class="pill-label">Vacancies</span>
+          <span class="pill-value">32,438 Posts</span>
+        </div>
+        <div class="pill pill-pay">
+          <span class="pill-label">Pay Scale</span>
+          <span class="pill-value">₹18,000/mo</span>
+        </div>
+        <div class="pill pill-date">
+          <span class="pill-label">Last Date</span>
+          <span class="pill-value">10 Mar 2026</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- ════════════════════════════════════════ -->
+
+<!-- PAGE BODY -->
+<div class="page-body">
+  <div class="content">
+
+    <!-- 1. ELIGIBILITY CHECK -->
+    <div class="section-card">
+      <h2><span class="ico">✅</span> Eligibility at a Glance</h2>
+
+      <div class="eligibility-box">
+        <div class="check-title">Am I Eligible? — Check These 4 Things</div>
+        <!-- EDIT: Fill in the correct eligibility details -->
+        <div class="check-row"><span class="check-key">Education</span><span class="check-val">10th Pass (Matriculation) from recognized board</span></div>
+        <div class="check-row"><span class="check-key">Age (General)</span><span class="check-val">18 to 36 years as on 01 Jan 2026</span></div>
+        <div class="check-row"><span class="check-key">Age (OBC)</span><span class="check-val">18 to 39 years (3 years relaxation)</span></div>
+        <div class="check-row"><span class="check-key">Age (SC/ST)</span><span class="check-val">18 to 41 years (5 years relaxation)</span></div>
+        <div class="check-row"><span class="check-key">Nationality</span><span class="check-val">Indian Citizen</span></div>
+        <div class="check-row"><span class="check-key">Physical Fitness</span><span class="check-val">Must pass Physical Efficiency Test (PET)</span></div>
+      </div>
+
+      <div class="warn-banner">
+        <span class="wi">⚠️</span>
+        <span>Always verify exact eligibility on the official RRB website before applying. Age relaxations and category requirements may vary.</span>
+      </div>
+    </div>
+
+    <!-- 2. ABOUT THE JOB -->
+    <div class="section-card">
+      <h2><span class="ico">📋</span> About This Job</h2>
+      <!-- EDIT: Write 2–3 lines about what this job is -->
+      <p style="font-size:0.92rem; margin-bottom:14px;">Railway Recruitment Board (RRB) Group D Level 1 posts include Track Maintainer, Helper in Engineering, Electrical, Signal & Telecommunication Departments, Assistant Pointsman, and others across Indian Railways. These are permanent central government jobs with full pension and job security.</p>
+      <table class="detail-table">
+        <tr><td>Organization</td><td>Ministry of Railways, Government of India</td></tr>
+        <tr><td>Post Name</td><td>Track Maintainer Gr-IV, Helper, Assistant Pointsman & others</td></tr>
+        <tr><td>Pay Level</td><td>Level 1 in 7th CPC Pay Matrix</td></tr>
+        <tr><td>Basic Pay</td><td>₹18,000 per month + DA + HRA + Other Allowances</td></tr>
+        <tr><td>Job Type</td><td>Permanent Central Government Job</td></tr>
+        <tr><td>Work Location</td><td>Any Railway Zone across India</td></tr>
+        <tr><td>Total Vacancies</td><td>32,438 Posts</td></tr>
+      </table>
+    </div>
+
+    <!-- 3. SELECTION PROCESS -->
+    <div class="section-card">
+      <h2><span class="ico">🏆</span> Selection Process</h2>
+      <ol class="info-list">
+        <li><strong>Computer Based Test (CBT)</strong> — 100 questions on Mathematics, General Intelligence & Reasoning, General Science, General Awareness. 90 minutes. Negative marking: 1/3rd.</li>
+        <li><strong>Physical Efficiency Test (PET)</strong> — Male: Should be able to lift and carry 35 kg for 100m in 2 minutes. Female: Should be able to lift and carry 20 kg for 100m in 2 minutes.</li>
+        <li><strong>Document Verification</strong> — Original certificates for education, age, category etc.</li>
+        <li><strong>Medical Examination</strong> — Vision and general health check as per Railway standards.</li>
+      </ol>
+    </div>
+
+    <!-- 4. SYLLABUS -->
+    <div class="section-card">
+      <h2><span class="ico">📚</span> CBT Exam Syllabus</h2>
+      <table class="detail-table">
+        <tr><td>Mathematics</td><td>Number system, Decimals, Fractions, LCM/HCF, Ratio, Percentage, Profit/Loss, Simple & Compound Interest, Time & Work, Time & Distance, Mensuration, Geometry, Trigonometry, Elementary Statistics</td></tr>
+        <tr><td>Reasoning</td><td>Analogies, Alphabetical & Number Series, Coding & Decoding, Mathematical Operations, Syllogism, Venn Diagram, Data Interpretation, Conclusions</td></tr>
+        <tr><td>General Science</td><td>Physics, Chemistry, Life Science of Class 10 CBSE standard</td></tr>
+        <tr><td>General Awareness</td><td>Science & Technology, Sports, Culture, Personalities, Economics, Politics, Current Affairs</td></tr>
+        <tr><td>Total Questions</td><td>100 questions | 90 minutes | 1/3 negative marking</td></tr>
+      </table>
+    </div>
+
+    <!-- 5. IMPORTANT DATES -->
+    <div class="section-card">
+      <h2><span class="ico">📅</span> Important Dates</h2>
+      <!-- EDIT: Fill in real dates. Add class="date-urgent" or "date-soon" to highlight close dates -->
+      <table class="dates-table">
+        <tr><td>Notification Released</td><td>15 Jan 2026</td></tr>
+        <tr><td>Online Application Start</td><td>20 Jan 2026</td></tr>
+        <tr><td>Last Date to Apply</td><td class="date-urgent">10 Mar 2026</td></tr>
+        <tr><td>Fee Payment Last Date</td><td class="date-urgent">10 Mar 2026</td></tr>
+        <tr><td>Admit Card</td><td>To be announced</td></tr>
+        <tr><td>CBT Exam Date</td><td>To be announced</td></tr>
+        <tr><td>Result</td><td>To be announced</td></tr>
+      </table>
+    </div>
+
+    <!-- 6. APPLICATION FEE -->
+    <div class="section-card">
+      <h2><span class="ico">💳</span> Application Fee</h2>
+      <table class="detail-table">
+        <tr><td>General / OBC / EWS</td><td>₹500 (₹400 refunded after CBT)</td></tr>
+        <tr><td>SC / ST / Ex-Serviceman</td><td>₹250 (fully refunded after CBT)</td></tr>
+        <tr><td>Female Candidates</td><td>₹250 (fully refunded after CBT)</td></tr>
+        <tr><td>Payment Mode</td><td>Net Banking, Credit/Debit Card, UPI</td></tr>
+      </table>
+    </div>
+
+    <!-- 7. YOUTUBE VIDEO -->
+    <div class="section-card">
+      <h2><span class="ico">▶️</span> Watch Our Full Explanation (Hindi)</h2>
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:16px;">We explain the full eligibility, syllabus, and step-by-step application process in simple Hindi. Watch before applying.</p>
+
+      <!-- EDIT: Replace YOUR_VIDEO_ID with the actual YouTube video ID -->
+      <!-- The video ID is the part after ?v= in your YouTube URL -->
+      <!-- Example: https://youtu.be/dQw4w9WgXcQ → video ID is dQw4w9WgXcQ -->
+      <div class="yt-embed-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+          title="RRB Group D 2026 Full Details in Hindi – Sarkari Naukri News"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p style="font-size:0.78rem;color:var(--muted);margin-top:12px;text-align:center;">
+        📺 More videos on <a href="#" data-link="youtube" target="_blank">Sarkari Naukri News YouTube Channel</a>
+      </p>
+    </div>
+
+    <!-- 8. HOW TO APPLY -->
+    <div class="section-card">
+      <h2><span class="ico">📝</span> How to Apply — Step by Step</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Go to Official Website</strong>Click the "Apply Now" button below. It will open the official RRB website.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Register / New Registration</strong>Click "New Registration". Enter your name, mobile number, and email. You will receive a Registration Number and Password by SMS.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Fill the Application Form</strong>Login with your Registration Number. Fill personal details, educational qualifications, and choose your preferred RRB zone.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Upload Documents</strong>Upload your photo (20–50 KB, JPG), signature (10–40 KB, JPG), and 10th marksheet/certificate.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text"><strong>Pay Application Fee</strong>Pay online using UPI, Net Banking, or Debit/Credit card. Save the payment receipt.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text"><strong>Submit & Save Confirmation</strong>Submit the form. Take a printout or screenshot of the final confirmation page for your records.</div></div>
+      </div>
+    </div>
+
+    <!-- 9. APPLY BUTTON -->
+    <div class="section-card apply-section">
+      <!-- EDIT: Replace # with the actual official apply link -->
+      <a class="apply-btn" href="#" target="_blank" rel="noopener noreferrer">
+        🏛️ Apply on Official RRB Website
+      </a>
+      <p>⚠️ This button opens the official government website. Sarkari Naukri News does not collect any personal information or application fees. Always apply only on official .gov.in websites.</p>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Share this job -->
+    <div class="s-card">
+      <h3>📤 Share This Job</h3>
+      <div class="share-row">
+        <a class="share-btn share-tg"
+           href="#" data-link="share-tg"
+           target="_blank">
+          <span class="sb-icon">📣</span> Share on Telegram
+        </a>
+        <a class="share-btn share-wa"
+           href="#" data-link="share-wa"
+           target="_blank">
+          <span class="sb-icon">💬</span> Share on WhatsApp
+        </a>
+        <button class="share-btn share-copy" onclick="copyLink()">
+          <span class="sb-icon">🔗</span> <span id="copy-label">Copy Page Link</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick summary -->
+    <div class="s-card">
+      <h3>📌 Quick Summary</h3>
+      <!-- EDIT: Keep this in sync with the hero pills -->
+      <table class="detail-table" style="font-size:0.82rem;">
+        <tr><td>Board</td><td>RRB (Indian Railways)</td></tr>
+        <tr><td>Posts</td><td>32,438</td></tr>
+        <tr><td>Education</td><td>10th Pass</td></tr>
+        <tr><td>Age</td><td>18–36 years</td></tr>
+        <tr><td>Salary</td><td>₹18,000 + Allowances</td></tr>
+        <tr><td>Last Date</td><td style="color:var(--red);font-weight:700;">10 Mar 2026</td></tr>
+        <tr><td>Apply Mode</td><td>Online</td></tr>
+      </table>
+    </div>
+
+    <!-- Telegram CTA -->
+    <div class="tg-cta">
+      <div class="tg-icon">📣</div>
+      <h3>Get Instant Alerts</h3>
+      <p>We post every new job notification directly on Telegram as soon as it's out.</p>
+      <a href="#" data-link="telegram" target="_blank">📲 Join Our Telegram</a>
+    </div>
+
+    <!-- Related jobs -->
+    <div class="s-card">
+      <h3>🔗 Similar Jobs (10th Pass)</h3>
+      <div class="related-list">
+        <!-- EDIT: Update these with real related job links -->
+        <a class="related-item" href="ssc-gd-constable-2026.html">
+          <span class="ri-icon">🛡️</span>
+          <span class="ri-text">SSC GD Constable 2026</span>
+          <span class="ri-tag">10th</span>
+        </a>
+        <a class="related-item" href="india-post-gds-2026.html">
+          <span class="ri-icon">📮</span>
+          <span class="ri-text">India Post GDS 2026</span>
+          <span class="ri-tag">10th</span>
+        </a>
+        <a class="related-item" href="army-gd-soldier-2026.html">
+          <span class="ri-icon">🎖️</span>
+          <span class="ri-text">Army GD Soldier 2026</span>
+          <span class="ri-tag">10th</span>
+        </a>
+        <a class="related-item" href="air-force-agniveer-nce-2026.html">
+          <span class="ri-icon">✈️</span>
+          <span class="ri-text">Air Force Agniveer 2026</span>
+          <span class="ri-tag">10th</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="s-card" style="padding:14px 16px;">
+      <p style="font-size:0.72rem;color:var(--muted);line-height:1.7;">
+        ⚠️ <strong style="color:#fff;">Disclaimer:</strong> Information on this page is sourced from official government notifications. Always verify details on the official recruitment website before applying. Sarkari Naukri News is not responsible for any errors or omissions.
+      </p>
+    </div>
+
+  </aside>
+</div><!-- /page-body -->
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong style="color:#fff;">Sarkari Naukri News</strong> — Latest Government Job Alerts in Hindi<br>
+    📺 <a href="#" data-link="youtube">YouTube</a> &nbsp;|&nbsp;
+    📣 <a href="#" data-link="telegram">Telegram</a> &nbsp;|&nbsp;
+    <a href="../index.html">Home</a><br><br>
+    © 2026 Sarkari Naukri News. Content sourced from official government portals.
+  </p>
+</footer>
+
+<script>
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const label = document.getElementById('copy-label');
+      label.textContent = 'Link Copied! ✓';
+      setTimeout(() => label.textContent = 'Copy Page Link', 2500);
+    });
+  }
+</script>
+
+
+<script>
+// Auto-fill all links from config.js
+(function() {
+  if (typeof SITE_CONFIG === 'undefined') return;
+  document.querySelectorAll('a[data-link="youtube"]').forEach(function(el) {
+    el.href = SITE_CONFIG.youtube;
+  });
+  document.querySelectorAll('a[data-link="telegram"]').forEach(function(el) {
+    el.href = SITE_CONFIG.telegram;
+  });
+  // Share buttons that embed the URL
+  document.querySelectorAll('a[data-link="share-tg"]').forEach(function(el) {
+    var pageUrl = encodeURIComponent(window.location.href);
+    var title = encodeURIComponent(document.title);
+    el.href = 'https://t.me/share/url?url=' + pageUrl + '&text=' + title;
+  });
+  document.querySelectorAll('a[data-link="share-wa"]').forEach(function(el) {
+    var pageUrl = encodeURIComponent(window.location.href);
+    var title = encodeURIComponent(document.title);
+    el.href = 'https://wa.me/?text=' + title + '%20' + pageUrl;
+  });
+})();
+</script>
+
+</body>
+</html>
