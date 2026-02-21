@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FREE Government AI Course – Yuva AI for All by FutureSkills Prime & IndiaAI Mission. Free certificate for all Indian citizens. No qualification required. Apply now.">
+  <title>FREE Government AI Course – Yuva AI for All 🎓 | Sarkari Naukri News</title>
+  <script src="../config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:#0D1B3E; --navy-mid:#162447; --card:#1A2C55;
+      --saffron:#FF6B00; --saffron-light:#FF8C38;
+      --gold:#F5C842; --green:#1DB954; --red:#E53935;
+      --purple:#7C3AED; --purple-light:#A78BFA; --purple-bg:rgba(124,58,237,0.12); --purple-border:rgba(124,58,237,0.3);
+      --cyan:#06B6D4; --cyan-bg:rgba(6,182,212,0.1); --cyan-border:rgba(6,182,212,0.25);
+      --text:#E8EAF0; --muted:#8A93B0; --border:rgba(255,255,255,0.07);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--navy);color:var(--text);font-family:'Hind',sans-serif;line-height:1.7;}
+    a{color:var(--saffron);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    nav{position:sticky;top:0;z-index:100;background:rgba(13,27,62,0.96);backdrop-filter:blur(12px);border-bottom:2px solid var(--saffron);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:58px;}
+    .brand{font-family:'Baloo 2',cursive;font-size:1.25rem;font-weight:800;color:#fff;text-decoration:none;}
+    .brand span{color:var(--saffron);}
+    .nav-links{display:flex;gap:6px;}
+    .nav-links a{color:var(--muted);font-size:0.82rem;font-weight:600;padding:6px 12px;border-radius:6px;letter-spacing:0.5px;text-transform:uppercase;transition:color .2s,background .2s;}
+    .nav-links a:hover{color:#fff;background:rgba(255,107,0,0.15);text-decoration:none;}
+    .tg-btn{display:flex;align-items:center;gap:7px;background:#229ED9;color:#fff;font-size:0.78rem;font-weight:700;padding:7px 14px;border-radius:20px;text-decoration:none;transition:opacity .2s;}
+    .tg-btn:hover{opacity:.85;text-decoration:none;}
+    .tg-btn svg{width:15px;height:15px;fill:#fff;}
+
+    .breadcrumb{max-width:960px;margin:18px auto 0;padding:0 20px;font-size:0.78rem;color:var(--muted);}
+    .breadcrumb a{color:var(--muted);}
+    .breadcrumb a:hover{color:var(--saffron);}
+    .breadcrumb span{margin:0 6px;}
+
+    /* HERO — special AI theme */
+    .course-hero{max-width:960px;margin:18px auto 0;padding:0 20px;}
+    .course-hero-inner{
+      background:linear-gradient(135deg, #0f0c29, #1a1060, #24243e);
+      border:1px solid var(--purple-border);
+      border-radius:16px;padding:32px;
+      position:relative;overflow:hidden;
+    }
+    .course-hero-inner::before{
+      content:'';position:absolute;top:-60px;right:-60px;
+      width:260px;height:260px;border-radius:50%;
+      background:radial-gradient(circle,rgba(124,58,237,0.2),transparent 70%);
+      pointer-events:none;
+    }
+    .free-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(29,185,84,0.15);border:1px solid rgba(29,185,84,0.4);color:#1DB954;font-size:0.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:16px;}
+    .course-hero-title{font-family:'Baloo 2',cursive;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:8px;}
+    .course-hero-title span{color:var(--purple-light);}
+    .course-hero-sub{font-size:0.92rem;color:#A78BFA;margin-bottom:20px;}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:10px;}
+    .pill{display:flex;flex-direction:column;align-items:center;padding:10px 18px;border-radius:12px;min-width:120px;text-align:center;}
+    .pill-label{font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:0.75;margin-bottom:3px;}
+    .pill-value{font-size:0.95rem;font-weight:700;line-height:1.2;}
+    .pill-free{background:rgba(29,185,84,0.15);border:1px solid rgba(29,185,84,0.35);color:#1DB954;}
+    .pill-who{background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.35);color:#A78BFA;}
+    .pill-cert{background:rgba(245,200,66,0.15);border:1px solid rgba(245,200,66,0.35);color:#F5C842;}
+    .pill-dur{background:rgba(6,182,212,0.12);border:1px solid rgba(6,182,212,0.3);color:#06B6D4;}
+    .pill-lang{background:rgba(255,107,0,0.12);border:1px solid rgba(255,107,0,0.3);color:#FF8C38;}
+
+    .page-body{max-width:960px;margin:24px auto 60px;padding:0 20px;display:grid;grid-template-columns:1fr 280px;gap:24px;}
+    .content{display:flex;flex-direction:column;gap:20px;}
+
+    .section-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 28px;}
+    .section-card h2{font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px;padding-bottom:12px;margin-bottom:18px;border-bottom:1px solid var(--border);}
+
+    /* Big FREE highlight */
+    .free-highlight{background:linear-gradient(135deg,rgba(29,185,84,0.1),rgba(29,185,84,0.05));border:1px solid rgba(29,185,84,0.25);border-radius:12px;padding:20px 24px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start;}
+    .free-highlight .fh-icon{font-size:2.5rem;flex-shrink:0;}
+    .free-highlight h3{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:700;color:#1DB954;margin-bottom:6px;}
+    .free-highlight p{font-size:0.88rem;color:var(--text);line-height:1.6;}
+
+    .detail-table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+    .detail-table tr{border-bottom:1px solid var(--border);}
+    .detail-table tr:last-child{border-bottom:none;}
+    .detail-table td{padding:10px 8px;vertical-align:top;}
+    .detail-table td:first-child{color:var(--muted);font-weight:600;width:40%;padding-right:16px;}
+    .detail-table td:last-child{color:#fff;}
+
+    /* Who can join */
+    .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .who-item{display:flex;align-items:center;gap:10px;background:rgba(124,58,237,0.07);border:1px solid var(--purple-border);border-radius:10px;padding:11px 14px;font-size:0.88rem;}
+    .who-item .wi{font-size:1.2rem;flex-shrink:0;}
+
+    /* Modules */
+    .modules-list{display:flex;flex-direction:column;gap:12px;}
+    .module-item{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+    .mod-num{min-width:36px;height:36px;border-radius:10px;background:var(--purple-bg);border:1px solid var(--purple-border);color:var(--purple-light);font-family:'Baloo 2',cursive;font-weight:800;font-size:0.95rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .mod-text h4{font-size:0.9rem;font-weight:700;color:#fff;margin-bottom:3px;}
+    .mod-text p{font-size:0.82rem;color:var(--muted);line-height:1.5;}
+
+    /* Skills tags */
+    .skills-wrap{display:flex;flex-wrap:wrap;gap:8px;}
+    .skill-tag{background:var(--cyan-bg);border:1px solid var(--cyan-border);color:var(--cyan);font-size:0.78rem;font-weight:600;padding:5px 12px;border-radius:20px;}
+
+    /* Steps */
+    .steps{display:flex;flex-direction:column;gap:14px;}
+    .step{display:flex;gap:16px;align-items:flex-start;}
+    .step-num{min-width:32px;height:32px;border-radius:50%;background:var(--purple);color:#fff;font-family:'Baloo 2',cursive;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .step-text{font-size:0.9rem;padding-top:5px;}
+    .step-text strong{color:#fff;display:block;margin-bottom:2px;}
+
+    /* YouTube button */
+    .yt-watch-box{background:linear-gradient(135deg,#1a0000,#3d0000);border:1px solid rgba(255,0,0,0.25);border-radius:14px;padding:32px 24px;text-align:center;}
+    .yt-watch-box .yt-thumb{font-size:4rem;margin-bottom:14px;}
+    .yt-watch-box h3{font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .yt-watch-box p{font-size:0.85rem;color:#E57373;margin-bottom:20px;line-height:1.5;}
+    .yt-watch-btn{display:inline-flex;align-items:center;gap:10px;background:#FF0000;color:#fff;padding:13px 28px;border-radius:50px;font-family:'Baloo 2',cursive;font-size:1rem;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(255,0,0,0.35);}
+    .yt-watch-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,0,0,0.45);text-decoration:none;}
+
+    /* Apply button */
+    .apply-section{text-align:center;padding:32px 28px;}
+    .apply-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--purple),#5B21B6);color:#fff;padding:15px 32px;border-radius:50px;font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(124,58,237,0.4);}
+    .apply-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,58,237,0.5);text-decoration:none;}
+    .apply-section p{font-size:0.8rem;color:var(--muted);margin-top:14px;}
+
+    /* Sidebar */
+    .sidebar{display:flex;flex-direction:column;gap:18px;}
+    .s-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;}
+    .s-card h3{font-family:'Baloo 2',cursive;font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+    .share-row{display:flex;flex-direction:column;gap:8px;}
+    .share-btn{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;text-decoration:none;font-size:0.82rem;font-weight:700;transition:opacity .2s;color:#fff;}
+    .share-btn:hover{opacity:.85;text-decoration:none;}
+    .share-tg{background:#229ED9;}
+    .share-wa{background:#25D366;}
+    .share-copy{background:rgba(255,255,255,0.08);color:var(--text);border:1px solid var(--border);cursor:pointer;}
+    .tg-cta{background:linear-gradient(135deg,#0e3d6e,#1a5276);border:1px solid rgba(34,158,217,0.3);border-radius:14px;padding:20px;text-align:center;}
+    .tg-cta .tg-icon{font-size:2rem;margin-bottom:8px;}
+    .tg-cta h3{font-family:'Baloo 2',cursive;font-size:0.95rem;color:#fff;margin-bottom:6px;border:none;padding:0;}
+    .tg-cta p{font-size:0.78rem;color:#93C9E8;margin-bottom:14px;line-height:1.5;}
+    .tg-cta a{display:block;background:#229ED9;color:#fff;padding:10px 16px;border-radius:30px;font-weight:700;font-size:0.82rem;text-decoration:none;}
+    .tg-cta a:hover{opacity:.85;}
+
+    footer{background:var(--navy-mid);border-top:1px solid var(--border);text-align:center;padding:28px 20px;}
+    footer p{font-size:0.75rem;color:var(--muted);line-height:1.8;}
+    footer a{color:var(--saffron);}
+
+    @media(max-width:720px){
+      .page-body{grid-template-columns:1fr;}
+      .sidebar{order:99;}
+      .course-hero-inner{padding:20px;}
+      .nav-links{display:none;}
+      .hero-pills{gap:8px;}
+      .pill{min-width:100px;padding:8px 12px;}
+      .who-grid{grid-template-columns:1fr;}
+      .section-card{padding:18px;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="../index.html">📋 <span>Sarkari</span> Naukri News</a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="10th-pass.html">10th Pass</a>
+    <a href="12th-pass.html">12th Pass</a>
+    <a href="graduate.html">Graduate</a>
+    <a href="../about.html">About</a>
+  </div>
+  <a class="tg-btn" href="#" data-link="telegram" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.832 13.99l-2.98-.929c-.648-.203-.66-.648.136-.961l11.647-4.49c.54-.194 1.016.131.859.611z"/></svg>
+    Join Telegram
+  </a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>›</span>
+  Yuva AI for All — Free Government AI Course
+</div>
+
+<div class="course-hero">
+  <div class="course-hero-inner">
+    <div class="free-badge">🆓 100% FREE — Government of India</div>
+    <h1 class="course-hero-title">Yuva AI for All 🤖<br><span>Free AI Certificate Course</span></h1>
+    <p class="course-hero-sub">By FutureSkills Prime & IndiaAI Mission — Ministry of Electronics & IT, Government of India</p>
+    <div class="hero-pills">
+      <div class="pill pill-free"><span class="pill-label">Course Fee</span><span class="pill-value">₹0 FREE</span></div>
+      <div class="pill pill-who"><span class="pill-label">Who Can Join</span><span class="pill-value">Every Indian</span></div>
+      <div class="pill pill-cert"><span class="pill-label">Certificate</span><span class="pill-value">Free + GOI</span></div>
+      <div class="pill pill-dur"><span class="pill-label">Duration</span><span class="pill-value">Self-Paced</span></div>
+      <div class="pill pill-lang"><span class="pill-label">Language</span><span class="pill-value">Hindi + English</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+  <div class="content">
+
+    <!-- WHY THIS MATTERS -->
+    <div class="section-card">
+      <h2>🚨 Why You Should Not Miss This</h2>
+      <div class="free-highlight">
+        <div class="fh-icon">🎓</div>
+        <div>
+          <h3>100% Free Government Certificate — No Exam Fee, No Hidden Charges</h3>
+          <p>This is an official course by the Government of India under the IndiaAI Mission. You get a free government-recognised certificate after completing the course. No qualification required — anyone in India can join, whether you are a student, job seeker, farmer, homemaker or working professional.</p>
+        </div>
+      </div>
+      <table class="detail-table">
+        <tr><td>Course Name</td><td>Yuva AI for All — Foundation Course on Responsible AI</td></tr>
+        <tr><td>Launched By</td><td>FutureSkills Prime (NASSCOM) & IndiaAI Mission, MeitY — Government of India</td></tr>
+        <tr><td>Course Fee</td><td style="color:#1DB954;font-weight:700;">₹0 — Completely FREE</td></tr>
+        <tr><td>Certificate</td><td>Free Government-recognised certificate on completion</td></tr>
+        <tr><td>Who Can Join</td><td>Every Indian citizen — no minimum qualification required</td></tr>
+        <tr><td>Mode</td><td>Online, Self-Paced — study at your own time and speed</td></tr>
+        <tr><td>Language</td><td>Available in multiple Indian languages including Hindi</td></tr>
+        <tr><td>Platform</td><td>FutureSkills Prime — futureskillsprime.in</td></tr>
+        <tr><td>Assessment</td><td>NASSCOM Assessment included</td></tr>
+        <tr><td>Placement Help</td><td>Placement Assistance provided after completion</td></tr>
+      </table>
+    </div>
+
+    <!-- WHO CAN JOIN -->
+    <div class="section-card">
+      <h2>👥 Who Can Join This Course?</h2>
+      <p style="font-size:0.9rem;margin-bottom:16px;">This course is open to <strong style="color:#fff;">every Indian citizen</strong> — there is absolutely no minimum education or age requirement. If you can read and are curious about AI, you can join.</p>
+      <div class="who-grid">
+        <div class="who-item"><span class="wi">🎒</span> School & College Students</div>
+        <div class="who-item"><span class="wi">💼</span> Working Professionals</div>
+        <div class="who-item"><span class="wi">🏪</span> Business Owners & Entrepreneurs</div>
+        <div class="who-item"><span class="wi">🌾</span> Farmers & Self-Employed</div>
+        <div class="who-item"><span class="wi">🏠</span> Homemakers & Lifelong Learners</div>
+        <div class="who-item"><span class="wi">📚</span> Teachers & Trainers</div>
+        <div class="who-item"><span class="wi">🔍</span> Job Seekers of Any Qualification</div>
+        <div class="who-item"><span class="wi">🇮🇳</span> Any Indian Curious About AI</div>
+      </div>
+    </div>
+
+    <!-- WHAT YOU WILL LEARN -->
+    <div class="section-card">
+      <h2>📚 Course Modules — What You Will Learn</h2>
+      <p style="font-size:0.88rem;color:var(--muted);margin-bottom:18px;">6 modules, each building practical AI skills step by step. Self-paced — complete at your own time.</p>
+      <div class="modules-list">
+        <div class="module-item">
+          <div class="mod-num">1</div>
+          <div class="mod-text"><h4>What is Artificial Intelligence?</h4><p>Understand what AI really means, how it has evolved over time, and where you can already see it in your daily life. Learn what AI can and cannot do.</p></div>
+        </div>
+        <div class="module-item">
+          <div class="mod-num">2</div>
+          <div class="mod-text"><h4>The Technology Behind AI</h4><p>Simplified science behind AI — how machines learn, what Generative AI is, and how to communicate effectively with AI tools using the CRAFT prompting formula.</p></div>
+        </div>
+        <div class="module-item">
+          <div class="mod-num">3</div>
+          <div class="mod-text"><h4>Using AI to Learn and Create</h4><p>Explore popular GenAI tools. Discover how AI can help you study better, create content, summarise information, and analyse data — with guided demos.</p></div>
+        </div>
+        <div class="module-item">
+          <div class="mod-num">4</div>
+          <div class="mod-text"><h4>Using AI to Think and Plan</h4><p>Learn how AI can act as a thinking partner — helping you plan projects, draft ideas, solve problems, and make better decisions in study and work.</p></div>
+        </div>
+        <div class="module-item">
+          <div class="mod-num">5</div>
+          <div class="mod-text"><h4>AI Ethics — Responsible Use</h4><p>Understand why responsible AI use matters. Learn the FAST framework to ensure safe, fair, and trustworthy AI use to protect yourself and others.</p></div>
+        </div>
+        <div class="module-item">
+          <div class="mod-num">6</div>
+          <div class="mod-text"><h4>The Future of AI</h4><p>Explore AI trends and career opportunities. Learn how AI will shape jobs, industries, and daily life — followed by a complete course recap.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS YOU GAIN -->
+    <div class="section-card">
+      <h2>⚡ Skills & Tools You Will Learn</h2>
+      <div class="skills-wrap">
+        <span class="skill-tag">Generative AI Tools</span>
+        <span class="skill-tag">AI Prompting (CRAFT Formula)</span>
+        <span class="skill-tag">Text-to-Image AI</span>
+        <span class="skill-tag">AI Writing Assistants</span>
+        <span class="skill-tag">AI Research Tools</span>
+        <span class="skill-tag">AI for Productivity</span>
+        <span class="skill-tag">AI Ethics (FAST Framework)</span>
+        <span class="skill-tag">Responsible AI Use</span>
+        <span class="skill-tag">AI for Career Growth</span>
+        <span class="skill-tag">ChatGPT & Similar Tools</span>
+      </div>
+    </div>
+
+    <!-- HOW TO ENROLL -->
+    <div class="section-card">
+      <h2>📝 How to Enroll — Step by Step</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Click Enroll Now Button Below</strong>It will open the official FutureSkills Prime website at futureskillsprime.in — the Government of India's official skill development platform.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Create a Free Account</strong>Click Register / Sign Up. Enter your name, mobile number, email ID, and create a password. Verify your mobile number with the OTP received.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Search for "Yuva AI for All"</strong>After logging in, search for the course or click the direct link. Select your preferred language from the dropdown (Hindi available).</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Click Enroll — It's Free</strong>Click the Enroll button. The course is completely free — no payment required at any step.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text"><strong>Complete All 6 Modules</strong>Watch the video lessons and complete each module at your own pace. The course is self-paced — no deadlines, study whenever you want.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text"><strong>Pass the NASSCOM Assessment</strong>After completing all modules, take the online assessment. Pass it to earn your free Government of India recognised certificate.</div></div>
+        <div class="step"><div class="step-num">7</div><div class="step-text"><strong>Download Your Free Certificate</strong>Download your certificate directly from your FutureSkills Prime dashboard. Add it to your resume — it is government recognised and nationally valid.</div></div>
+      </div>
+    </div>
+
+    <!-- YOUTUBE -->
+    <div class="section-card">
+      <h2>▶️ Watch Our Explanation (Hindi)</h2>
+      <div class="yt-watch-box">
+        <div class="yt-thumb">🤖</div>
+        <h3>FREE Government AI Course — Yuva AI for All Full Details in Hindi</h3>
+        <p>We explain what this course is, who can join, how to enroll, and how to get your free certificate — in simple Hindi.</p>
+        <a class="yt-watch-btn" href="https://youtube.com/shorts/k0DbImJv7-g?si=GgJcU3WLPv8diPAm" target="_blank" rel="noopener noreferrer">
+          ▶ Watch on YouTube
+        </a>
+      </div>
+      <p style="font-size:0.78rem;color:var(--muted);margin-top:12px;text-align:center;">
+        📺 More videos on <a href="#" data-link="youtube" target="_blank">Sarkari Naukri News YouTube Channel</a>
+      </p>
+    </div>
+
+    <!-- ENROLL BUTTON -->
+    <div class="section-card apply-section">
+      <a class="apply-btn" href="https://www.futureskillsprime.in/course/yuva-ai-for-all/" target="_blank" rel="noopener noreferrer">
+        🎓 Enroll FREE — Official Website
+      </a>
+      <p>⚠️ This opens the official Government of India FutureSkills Prime platform. The course is 100% free — you will never be asked to pay anything. If any website asks for money for this course, it is a fraud.</p>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="s-card">
+      <h3>📤 Share This</h3>
+      <div class="share-row">
+        <a class="share-btn share-tg" href="#" data-link="share-tg" target="_blank">📣 Share on Telegram</a>
+        <a class="share-btn share-wa" href="#" data-link="share-wa" target="_blank">💬 Share on WhatsApp</a>
+        <button class="share-btn share-copy" onclick="copyLink()">🔗 <span id="copy-label">Copy Page Link</span></button>
+      </div>
+    </div>
+
+    <div class="s-card">
+      <h3>📌 Quick Summary</h3>
+      <table class="detail-table" style="font-size:0.82rem;">
+        <tr><td>Course</td><td>Yuva AI for All</td></tr>
+        <tr><td>By</td><td>Govt. of India / MeitY</td></tr>
+        <tr><td>Fee</td><td style="color:#1DB954;font-weight:700;">FREE ₹0</td></tr>
+        <tr><td>Who Can Join</td><td>Every Indian</td></tr>
+        <tr><td>Min. Qualification</td><td>None Required</td></tr>
+        <tr><td>Certificate</td><td>Yes — Free GOI Certificate</td></tr>
+        <tr><td>Mode</td><td>Online, Self-Paced</td></tr>
+        <tr><td>Platform</td><td>futureskillsprime.in</td></tr>
+      </table>
+    </div>
+
+    <div class="tg-cta">
+      <div class="tg-icon">📣</div>
+      <h3>Get Instant Alerts</h3>
+      <p>Join our Telegram for free courses, government jobs and schemes the moment they are announced.</p>
+      <a href="#" data-link="telegram" target="_blank">📲 Join Our Telegram</a>
+    </div>
+
+    <div class="s-card" style="padding:14px 16px;">
+      <p style="font-size:0.72rem;color:var(--muted);line-height:1.7;">⚠️ <strong style="color:#fff;">Disclaimer:</strong> Course details sourced from official FutureSkills Prime website. Always verify current availability at futureskillsprime.in. This course is free — never pay anyone to enroll.</p>
+    </div>
+
+  </aside>
+</div>
+
+<footer>
+  <p>
+    <strong style="color:#fff;">Sarkari Naukri News</strong> — Latest Government Job Alerts in Hindi<br>
+    📺 <a href="#" data-link="youtube">YouTube</a> &nbsp;|&nbsp;
+    📣 <a href="#" data-link="telegram">Telegram</a> &nbsp;|&nbsp;
+    <a href="../index.html">Home</a><br><br>
+    © 2026 Sarkari Naukri News. Content sourced from futureskillsprime.in (Government of India).
+  </p>
+</footer>
+
+<script>
+function copyLink(){navigator.clipboard.writeText(window.location.href).then(()=>{const l=document.getElementById('copy-label');l.textContent='Link Copied! ✓';setTimeout(()=>l.textContent='Copy Page Link',2500);});}
+(function(){
+  if(typeof SITE_CONFIG==='undefined') return;
+  document.querySelectorAll('a[data-link="youtube"]').forEach(el=>el.href=SITE_CONFIG.youtube);
+  document.querySelectorAll('a[data-link="telegram"]').forEach(el=>el.href=SITE_CONFIG.telegram);
+  document.querySelectorAll('a[data-link="share-tg"]').forEach(el=>{el.href='https://t.me/share/url?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title);});
+  document.querySelectorAll('a[data-link="share-wa"]').forEach(el=>{el.href='https://wa.me/?text='+encodeURIComponent(document.title+' '+window.location.href);});
+})();
+</script>
+
+</body>
+</html>
