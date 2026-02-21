@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="config.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sarkari Naukri News - Latest Government Job Notifications. Find jobs matching your qualification - 10th Pass, 12th Pass, Graduate.">
+  <title>Sarkari Naukri News | Latest Government Job Alerts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --saffron:  #FF6B00;
+      --saffron-light: #FF8C38;
+      --navy:     #0D1B3E;
+      --navy-mid: #162447;
+      --navy-card:#1A2C55;
+      --gold:     #F5C842;
+      --green:    #1DB954;
+      --red:      #E53935;
+      --text:     #E8EAF0;
+      --muted:    #8A93B0;
+      --border:   rgba(255,255,255,0.07);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--navy);
+      color: var(--text);
+      font-family: 'Hind', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top:0; z-index:100;
+      background: rgba(13,27,62,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--saffron);
+      padding: 0 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+    }
+    .brand {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.35rem; font-weight: 800;
+      color: #fff; text-decoration: none; letter-spacing: 0.3px;
+    }
+    .brand span { color: var(--saffron); }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.82rem; font-weight: 600;
+      padding: 6px 12px; border-radius: 6px;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      transition: color .2s, background .2s;
+    }
+    .nav-links a:hover { color:#fff; background: rgba(255,107,0,0.15); }
+    .nav-links a.active { color: var(--saffron); }
+    .tg-btn {
+      display: flex; align-items: center; gap: 7px;
+      background: #229ED9; color: #fff;
+      font-size: 0.78rem; font-weight: 700;
+      padding: 7px 14px; border-radius: 20px;
+      text-decoration: none; letter-spacing: 0.3px;
+      transition: opacity .2s;
+    }
+    .tg-btn:hover { opacity: .85; }
+    .tg-btn svg { width:16px; height:16px; fill:#fff; flex-shrink:0; }
+
+    /* ── HERO / SEARCH ── */
+    .hero {
+      text-align: center;
+      padding: 72px 20px 56px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,107,0,0.12) 0%, transparent 70%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,107,0,0.15);
+      border: 1px solid rgba(255,107,0,0.35);
+      color: var(--saffron-light);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800; line-height: 1.15;
+      color: #fff; margin-bottom: 12px;
+    }
+    .hero h1 span { color: var(--saffron); }
+    .hero p {
+      color: var(--muted); font-size: 1rem;
+      max-width: 480px; margin: 0 auto 36px;
+    }
+
+    /* Search box */
+    .search-wrap {
+      max-width: 620px; margin: 0 auto;
+      position: relative;
+    }
+    .search-wrap input {
+      width: 100%; padding: 18px 60px 18px 24px;
+      background: var(--navy-card);
+      border: 2px solid rgba(255,107,0,0.3);
+      border-radius: 50px;
+      color: #fff; font-size: 1rem; font-family: 'Hind', sans-serif;
+      outline: none;
+      transition: border-color .25s, box-shadow .25s;
+    }
+    .search-wrap input::placeholder { color: var(--muted); }
+    .search-wrap input:focus {
+      border-color: var(--saffron);
+      box-shadow: 0 0 0 4px rgba(255,107,0,0.1);
+    }
+    .search-icon {
+      position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+      color: var(--saffron); pointer-events: none;
+    }
+    .search-icon svg { width:22px; height:22px; }
+
+    /* Quick filter chips */
+    .filter-chips {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      justify-content: center; margin-top: 20px;
+    }
+    .chip {
+      padding: 7px 18px; border-radius: 20px; border: none; cursor: pointer;
+      font-family: 'Hind', sans-serif; font-size: 0.82rem; font-weight: 600;
+      transition: all .2s;
+    }
+    .chip[data-filter="all"]      { background:#fff; color:var(--navy); }
+    .chip[data-filter="10th"]     { background:rgba(29,185,84,0.15); color:#1DB954; border:1px solid rgba(29,185,84,0.4); }
+    .chip[data-filter="12th"]     { background:rgba(245,200,66,0.15); color:#F5C842; border:1px solid rgba(245,200,66,0.4); }
+    .chip[data-filter="graduate"] { background:rgba(255,107,0,0.15);  color:var(--saffron-light); border:1px solid rgba(255,107,0,0.35); }
+    .chip[data-filter="any"]      { background:rgba(138,147,176,0.15); color:var(--muted); border:1px solid rgba(138,147,176,0.25); }
+    .chip.active, .chip:hover { transform: scale(1.06); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .chip[data-filter="all"].active, .chip[data-filter="all"]:hover { background:var(--saffron); color:#fff; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      max-width: 900px; margin: 0 auto;
+      display: flex; gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+    }
+    .stat {
+      flex: 1; text-align: center; padding: 16px 10px;
+      border-right: 1px solid var(--border);
+      background: var(--navy-card);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Baloo 2', cursive; font-size: 1.6rem; font-weight: 800;
+      color: var(--saffron);
+    }
+    .stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; }
+
+    /* ── MAIN LAYOUT ── */
+    .container {
+      max-width: 980px; margin: 40px auto;
+      padding: 0 20px;
+      display: grid; grid-template-columns: 1fr 280px; gap: 28px;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-family: 'Baloo 2', cursive; font-size: 1.15rem; font-weight: 700;
+      color: #fff; display: flex; align-items: center; gap: 8px;
+    }
+    .section-title .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--saffron); display: inline-block;
+    }
+    .count-badge {
+      background: rgba(255,107,0,0.15);
+      color: var(--saffron); font-size: 0.78rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 12px;
+    }
+
+    /* ── JOB CARDS ── */
+    #jobs-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .job-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px 20px;
+      display: flex; align-items: center; gap: 16px;
+      text-decoration: none; color: inherit;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      animation: fadeUp .35s ease both;
+    }
+    .job-card:hover {
+      border-color: rgba(255,107,0,0.45);
+      transform: translateX(4px);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(10px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    .dept-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(255,107,0,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+
+    .job-info { flex: 1; min-width: 0; }
+    .job-title {
+      font-weight: 600; font-size: 0.95rem;
+      color: #fff; margin-bottom: 5px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .job-meta {
+      display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    }
+    .tag {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.4px;
+      padding: 2px 9px; border-radius: 10px;
+    }
+    .tag-10th     { background:rgba(29,185,84,0.15);  color:#1DB954; }
+    .tag-12th     { background:rgba(245,200,66,0.15); color:#F5C842; }
+    .tag-graduate { background:rgba(255,107,0,0.15);  color:var(--saffron-light); }
+    .tag-any      { background:rgba(138,147,176,0.12); color:var(--muted); }
+    .tag-dept     { background:rgba(255,255,255,0.06); color:var(--muted); }
+    .tag-posts    { background:rgba(21,101,192,0.2);   color:#64B5F6; }
+
+    .job-right { text-align: right; flex-shrink: 0; }
+    .last-date-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .last-date {
+      font-size: 0.8rem; font-weight: 700; margin-top: 2px;
+    }
+    .last-date.urgent { color: var(--red); }
+    .last-date.soon   { color: var(--gold); }
+    .last-date.ok     { color: var(--green); }
+    .arrow { color: var(--saffron); margin-left: 10px; font-size: 1.1rem; }
+
+    /* No results */
+    .no-results {
+      text-align: center; padding: 60px 20px; color: var(--muted);
+      display: none;
+    }
+    .no-results .icon { font-size: 3rem; margin-bottom: 12px; }
+    .no-results p { font-size: 1rem; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+    .sidebar-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px;
+    }
+    .sidebar-card h3 {
+      font-family: 'Baloo 2', cursive; font-size: 0.95rem; font-weight: 700;
+      color: #fff; margin-bottom: 14px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--border);
+    }
+
+    /* Telegram CTA */
+    .tg-card {
+      background: linear-gradient(135deg, #0e3d6e 0%, #1a5276 100%);
+      border: 1px solid rgba(34,158,217,0.3);
+      border-radius: 14px; padding: 22px;
+      text-align: center;
+    }
+    .tg-card .tg-icon { font-size: 2.5rem; margin-bottom: 10px; }
+    .tg-card h3 {
+      font-family: 'Baloo 2', cursive; font-size: 1rem; font-weight: 700;
+      color: #fff; margin-bottom: 6px;
+    }
+    .tg-card p { font-size: 0.8rem; color: #93C9E8; margin-bottom: 16px; line-height: 1.5; }
+    .tg-join-btn {
+      display: block; background: #229ED9; color: #fff;
+      text-decoration: none; padding: 11px 20px;
+      border-radius: 30px; font-weight: 700; font-size: 0.85rem;
+      transition: opacity .2s;
+    }
+    .tg-join-btn:hover { opacity: .85; }
+
+    /* YouTube CTA */
+    .yt-card {
+      background: linear-gradient(135deg, #3d0e0e 0%, #5c1a1a 100%);
+      border: 1px solid rgba(255,0,0,0.2);
+      border-radius: 14px; padding: 20px;
+      text-align: center;
+    }
+    .yt-card .yt-icon { font-size: 2.2rem; margin-bottom: 8px; }
+    .yt-card h3 { font-family:'Baloo 2',cursive; font-size:0.95rem; font-weight:700; color:#fff; margin-bottom:6px; }
+    .yt-card p { font-size:0.8rem; color:#E57373; margin-bottom:14px; line-height:1.5; }
+    .yt-sub-btn {
+      display: block; background: #FF0000; color: #fff;
+      text-decoration: none; padding: 10px 20px;
+      border-radius: 30px; font-weight: 700; font-size: 0.85rem;
+      transition: opacity .2s;
+    }
+    .yt-sub-btn:hover { opacity: .85; }
+
+    /* Qualification guide */
+    .qual-list { display: flex; flex-direction: column; gap: 8px; }
+    .qual-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 9px 12px; border-radius: 8px;
+      background: rgba(255,255,255,0.04); cursor: pointer;
+      transition: background .2s;
+    }
+    .qual-item:hover { background: rgba(255,107,0,0.1); }
+    .qual-item span:first-child { font-size: 0.85rem; font-weight: 500; }
+    .qual-count { font-size: 0.75rem; font-weight: 700; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-mid); border-top: 1px solid var(--border);
+      text-align: center; padding: 28px 20px; margin-top: 60px;
+    }
+    footer p { font-size: 0.78rem; color: var(--muted); line-height: 1.8; }
+    footer a { color: var(--saffron); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 720px) {
+      .container { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+      .nav-links { display: none; }
+      .hero { padding: 50px 16px 40px; }
+      .stats-bar { flex-wrap: wrap; }
+      .stat { min-width: 50%; }
+      .job-card { flex-wrap: wrap; }
+      .job-right { width: 100%; text-align: left; display:flex; gap:12px; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="index.html">📋 <span>Sarkari</span> Naukri News</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="jobs/10th-pass.html">10th Pass</a>
+    <a href="jobs/12th-pass.html">12th Pass</a>
+    <a href="jobs/graduate.html">Graduate</a>
+    <a href="about.html">About</a>
+  </div>
+  <a class="tg-btn" href="#" data-link="telegram" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.832 13.99l-2.98-.929c-.648-.203-.66-.648.136-.961l11.647-4.49c.54-.194 1.016.131.859.611z"/></svg>
+    Join Telegram
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🇮🇳 Latest Government Job Alerts</div>
+  <h1>Find Your <span>Sarkari Naukri</span><br>in Seconds</h1>
+  <p>Search from hundreds of government job notifications. Know your eligibility instantly.</p>
+
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search jobs… e.g. SSC, Railway, Police, Constable" autocomplete="off">
+    <span class="search-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </span>
+  </div>
+
+  <div class="filter-chips">
+    <button class="chip active" data-filter="all">All Jobs</button>
+    <button class="chip" data-filter="10th">10th Pass</button>
+    <button class="chip" data-filter="12th">12th Pass</button>
+    <button class="chip" data-filter="graduate">Graduate</button>
+    <button class="chip" data-filter="any">Any Qualification</button>
+  </div>
+</section>
+
+<!-- STATS -->
+<div style="max-width:900px;margin:0 auto 32px;padding:0 20px;">
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num" id="total-count">0</div><div class="stat-label">Total Jobs</div></div>
+    <div class="stat"><div class="stat-num" id="count-10th">0</div><div class="stat-label">10th Pass</div></div>
+    <div class="stat"><div class="stat-num" id="count-12th">0</div><div class="stat-label">12th Pass</div></div>
+    <div class="stat"><div class="stat-num" id="count-grad">0</div><div class="stat-label">Graduate</div></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+  <!-- JOB LIST -->
+  <main>
+    <div class="section-header">
+      <div class="section-title"><span class="dot"></span> Latest Job Notifications</div>
+      <span class="count-badge" id="visible-count">Loading…</span>
+    </div>
+
+    <div id="jobs-list"></div>
+    <div class="no-results" id="no-results">
+      <div class="icon">🔍</div>
+      <p>No jobs found for "<span id="search-term"></span>"</p>
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Telegram -->
+    <div class="tg-card">
+      <div class="tg-icon">📣</div>
+      <h3>Get Instant Alerts</h3>
+      <p>Join our Telegram channel to get every new job notification directly on your phone.</p>
+      <a class="tg-join-btn" href="#" data-link="telegram" target="_blank">📲 Join Telegram Channel</a>
+    </div>
+
+    <!-- YouTube -->
+    <div class="yt-card">
+      <div class="yt-icon">▶️</div>
+      <h3>Watch on YouTube</h3>
+      <p>We explain eligibility, salary and how to apply — in simple Hindi.</p>
+      <a class="yt-sub-btn" href="#" data-link="youtube" target="_blank">Subscribe Now</a>
+    </div>
+
+    <!-- Qualification Guide -->
+    <div class="sidebar-card">
+      <h3>🎓 Browse by Qualification</h3>
+      <div class="qual-list">
+        <div class="qual-item" onclick="filterByQual('10th')">
+          <span>10th Pass (Matric)</span>
+          <span class="qual-count tag tag-10th" id="sidebar-10th">0 jobs</span>
+        </div>
+        <div class="qual-item" onclick="filterByQual('12th')">
+          <span>12th Pass (Inter)</span>
+          <span class="qual-count tag tag-12th" id="sidebar-12th">0 jobs</span>
+        </div>
+        <div class="qual-item" onclick="filterByQual('graduate')">
+          <span>Graduate (Degree)</span>
+          <span class="qual-count tag tag-graduate" id="sidebar-grad">0 jobs</span>
+        </div>
+        <div class="qual-item" onclick="filterByQual('any')">
+          <span>Any Qualification</span>
+          <span class="qual-count tag tag-any" id="sidebar-any">0 jobs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="sidebar-card" style="padding:14px 16px;">
+      <p style="font-size:0.72rem;color:var(--muted);line-height:1.7;">
+        ⚠️ <strong style="color:#fff;">Disclaimer:</strong> Always verify job details and eligibility on the official government recruitment website before applying. Sarkari Naukri News is for informational purposes only.
+      </p>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong style="color:#fff;">Sarkari Naukri News</strong> — Your trusted source for government job alerts.<br>
+    📺 <a href="#" data-link="youtube">YouTube Channel</a> &nbsp;|&nbsp;
+    📣 <a href="#" data-link="telegram">Telegram Channel</a><br><br>
+    © 2026 Sarkari Naukri News. All Rights Reserved. &nbsp;|&nbsp;
+    Content sourced from official government portals. Always verify before applying.
+  </p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   jobs.js — YOUR CENTRAL DATA FILE
+   To add a new job, copy one object from this array and fill in:
+     title    : Job name
+     dept     : Department / Board name
+     qual     : "10th" | "12th" | "graduate" | "any"
+     posts    : Number of vacancies (string, e.g. "515 Posts")
+     lastDate : Application last date (string, e.g. "28 Feb 2026")
+     urgent   : true if closing within 7 days, false otherwise
+     icon     : An emoji that fits the department
+     link     : Path to the job's detail page (e.g. "jobs/ntpc-2026.html")
+═══════════════════════════════════════════════════════════════ */
+const JOBS = [
+  {
+    title: "NTPC Executive Trainee Recruitment 2026",
+    dept: "NTPC Limited",
+    qual: "graduate",
+    posts: "515 Posts",
+    lastDate: "25 Mar 2026",
+    urgent: false,
+    icon: "⚡",
+    link: "jobs/ntpc-executive-trainee-2026.html"
+  },
+  {
+    title: "India Post GDS Recruitment 2026",
+    dept: "India Post / Department of Posts",
+    qual: "10th",
+    posts: "28,636 Posts",
+    lastDate: "20 Mar 2026",
+    urgent: false,
+    icon: "📮",
+    link: "jobs/india-post-gds-2026.html"
+  },
+  {
+    title: "SSC GD Constable 2026 – Exam Date Update",
+    dept: "Staff Selection Commission",
+    qual: "10th",
+    posts: "39,481 Posts",
+    lastDate: "Closed",
+    urgent: false,
+    icon: "🛡️",
+    link: "jobs/ssc-gd-constable-2026.html"
+  },
+  {
+    title: "RRB Group D Recruitment 2026",
+    dept: "Railway Recruitment Board",
+    qual: "10th",
+    posts: "32,438 Posts",
+    lastDate: "10 Mar 2026",
+    urgent: true,
+    icon: "🚂",
+    link: "jobs/rrb-group-d-2026.html"
+  },
+  {
+    title: "SSC CPO Sub-Inspector Delhi Police & CAPFs 2025",
+    dept: "Staff Selection Commission",
+    qual: "graduate",
+    posts: "3,073 Posts",
+    lastDate: "05 Mar 2026",
+    urgent: true,
+    icon: "👮",
+    link: "jobs/ssc-cpo-2025.html"
+  },
+  {
+    title: "Chandigarh High Court Stenographer 2026",
+    dept: "Chandigarh High Court",
+    qual: "12th",
+    posts: "50 Posts",
+    lastDate: "15 Mar 2026",
+    urgent: false,
+    icon: "⚖️",
+    link: "jobs/chandigarh-hc-steno-2026.html"
+  },
+  {
+    title: "Air Force Agniveer Non-Combatant Recruitment 2026",
+    dept: "Indian Air Force",
+    qual: "10th",
+    posts: "Various Posts",
+    lastDate: "28 Feb 2026",
+    urgent: true,
+    icon: "✈️",
+    link: "jobs/air-force-agniveer-nce-2026.html"
+  },
+  {
+    title: "RBI Assistant Recruitment 2026",
+    dept: "Reserve Bank of India",
+    qual: "graduate",
+    posts: "650 Posts",
+    lastDate: "20 Mar 2026",
+    urgent: false,
+    icon: "🏦",
+    link: "jobs/rbi-assistant-2026.html"
+  },
+  {
+    title: "Delhi IHE DU Non-Teaching Recruitment 2026",
+    dept: "Delhi University",
+    qual: "graduate",
+    posts: "Various Posts",
+    lastDate: "12 Mar 2026",
+    urgent: false,
+    icon: "🎓",
+    link: "jobs/delhi-ihe-du-2026.html"
+  },
+  {
+    title: "IndiGo Airlines Ground Staff Recruitment 2026",
+    dept: "IndiGo Airlines",
+    qual: "12th",
+    posts: "Multiple Posts",
+    lastDate: "Rolling Basis",
+    urgent: false,
+    icon: "🛫",
+    link: "jobs/indigo-ground-staff-2026.html"
+  },
+  {
+    title: "UPSC Civil Services (IAS/IPS) Notification 2026",
+    dept: "Union Public Service Commission",
+    qual: "graduate",
+    posts: "979 Posts",
+    lastDate: "18 Mar 2026",
+    urgent: false,
+    icon: "🇮🇳",
+    link: "jobs/upsc-civil-services-2026.html"
+  },
+  {
+    title: "Army GD Soldier Recruitment 2026",
+    dept: "Indian Army",
+    qual: "10th",
+    posts: "Open Rally",
+    lastDate: "Check Official Site",
+    urgent: false,
+    icon: "🎖️",
+    link: "jobs/army-gd-soldier-2026.html"
+  },
+];
+
+/* ── Render & Logic ── */
+
+let currentFilter = 'all';
+let currentSearch = '';
+
+function getDateStatus(dateStr) {
+  if (!dateStr || dateStr === 'Closed' || dateStr === 'Rolling Basis' || dateStr === 'Check Official Site') return 'ok';
+  const parts = dateStr.split(' ');
+  if (parts.length < 3) return 'ok';
+  const months = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+  const d = parseInt(parts[0]);
+  const m = months[parts[1]];
+  const y = parseInt(parts[2]);
+  if (isNaN(d) || m === undefined || isNaN(y)) return 'ok';
+  const target = new Date(y, m, d);
+  const today = new Date();
+  const diff = Math.ceil((target - today) / (1000*60*60*24));
+  if (diff < 0) return 'ok';
+  if (diff <= 5) return 'urgent';
+  if (diff <= 10) return 'soon';
+  return 'ok';
+}
+
+function qualTag(qual) {
+  const map = {
+    '10th':     ['tag-10th',     '10th Pass'],
+    '12th':     ['tag-12th',     '12th Pass'],
+    'graduate': ['tag-graduate', 'Graduate'],
+    'any':      ['tag-any',      'Any Qual'],
+  };
+  const [cls, label] = map[qual] || ['tag-any', qual];
+  return `<span class="tag ${cls}">${label}</span>`;
+}
+
+function renderJobs() {
+  const list = document.getElementById('jobs-list');
+  const noRes = document.getElementById('no-results');
+  const q = currentSearch.toLowerCase().trim();
+
+  const filtered = JOBS.filter(job => {
+    const matchSearch = !q || job.title.toLowerCase().includes(q) || job.dept.toLowerCase().includes(q);
+    const matchFilter = currentFilter === 'all' || job.qual === currentFilter;
+    return matchSearch && matchFilter;
+  });
+
+  document.getElementById('visible-count').textContent = `${filtered.length} jobs`;
+
+  if (filtered.length === 0) {
+    list.innerHTML = '';
+    noRes.style.display = 'block';
+    document.getElementById('search-term').textContent = q || currentFilter;
+    return;
+  }
+
+  noRes.style.display = 'none';
+  list.innerHTML = filtered.map((job, i) => {
+    const status = job.urgent ? 'urgent' : getDateStatus(job.lastDate);
+    return `
+    <a class="job-card" href="${job.link}" style="animation-delay:${i * 0.04}s">
+      <div class="dept-icon">${job.icon}</div>
+      <div class="job-info">
+        <div class="job-title">${job.title}</div>
+        <div class="job-meta">
+          ${qualTag(job.qual)}
+          <span class="tag tag-dept">${job.dept}</span>
+          <span class="tag tag-posts">📋 ${job.posts}</span>
+        </div>
+      </div>
+      <div class="job-right">
+        <div class="last-date-label">Last Date</div>
+        <div class="last-date ${status}">${job.lastDate}</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>`;
+  }).join('');
+}
+
+function updateStats() {
+  document.getElementById('total-count').textContent = JOBS.length;
+  const c10 = JOBS.filter(j=>j.qual==='10th').length;
+  const c12 = JOBS.filter(j=>j.qual==='12th').length;
+  const cGrad = JOBS.filter(j=>j.qual==='graduate').length;
+  const cAny = JOBS.filter(j=>j.qual==='any').length;
+  document.getElementById('count-10th').textContent = c10;
+  document.getElementById('count-12th').textContent = c12;
+  document.getElementById('count-grad').textContent = cGrad;
+  document.getElementById('sidebar-10th').textContent = `${c10} jobs`;
+  document.getElementById('sidebar-12th').textContent = `${c12} jobs`;
+  document.getElementById('sidebar-grad').textContent = `${cGrad} jobs`;
+  document.getElementById('sidebar-any').textContent = `${cAny} jobs`;
+}
+
+function filterByQual(qual) {
+  currentFilter = qual;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  const chip = document.querySelector(`.chip[data-filter="${qual}"]`);
+  if (chip) chip.classList.add('active');
+  renderJobs();
+  document.getElementById('jobs-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Search
+document.getElementById('searchInput').addEventListener('input', e => {
+  currentSearch = e.target.value;
+  renderJobs();
+});
+
+// Filter chips
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    currentFilter = chip.dataset.filter;
+    renderJobs();
+  });
+});
+
+// Init
+updateStats();
+renderJobs();
+</script>
+
+<script>
+// Auto-fill all links from config.js
+(function() {
+  if (typeof SITE_CONFIG === 'undefined') return;
+  document.querySelectorAll('a[data-link="youtube"]').forEach(function(el) {
+    el.href = SITE_CONFIG.youtube;
+  });
+  document.querySelectorAll('a[data-link="telegram"]').forEach(function(el) {
+    el.href = SITE_CONFIG.telegram;
+  });
+  // Share buttons that embed the URL
+  document.querySelectorAll('a[data-link="share-tg"]').forEach(function(el) {
+    var pageUrl = encodeURIComponent(window.location.href);
+    var title = encodeURIComponent(document.title);
+    el.href = 'https://t.me/share/url?url=' + pageUrl + '&text=' + title;
+  });
+  document.querySelectorAll('a[data-link="share-wa"]').forEach(function(el) {
+    var pageUrl = encodeURIComponent(window.location.href);
+    var title = encodeURIComponent(document.title);
+    el.href = 'https://wa.me/?text=' + title + '%20' + pageUrl;
+  });
+})();
+</script>
+
+</body>
+</html>

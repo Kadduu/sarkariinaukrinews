@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="config.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Sarkari Naukri News – Your trusted source for government job alerts in Hindi. YouTube channel covering eligibility, salary and how to apply for every Sarkari Naukri.">
+  <title>About Us | Sarkari Naukri News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --saffron:#FF6B00; --saffron-light:#FF8C38;
+      --navy:#0D1B3E; --navy-mid:#162447; --card:#1A2C55;
+      --gold:#F5C842; --green:#1DB954; --red:#E53935;
+      --text:#E8EAF0; --muted:#8A93B0; --border:rgba(255,255,255,0.07);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--navy);color:var(--text);font-family:'Hind',sans-serif;min-height:100vh;}
+    a{color:var(--saffron);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    nav{position:sticky;top:0;z-index:100;background:rgba(13,27,62,0.96);backdrop-filter:blur(12px);border-bottom:2px solid var(--saffron);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:58px;}
+    .brand{font-family:'Baloo 2',cursive;font-size:1.25rem;font-weight:800;color:#fff;text-decoration:none;}
+    .brand span{color:var(--saffron);}
+    .nav-links{display:flex;gap:6px;}
+    .nav-links a{color:var(--muted);font-size:0.82rem;font-weight:600;padding:6px 12px;border-radius:6px;letter-spacing:0.5px;text-transform:uppercase;transition:color .2s,background .2s;}
+    .nav-links a:hover{color:#fff;background:rgba(255,107,0,0.15);text-decoration:none;}
+    .nav-links a.active{color:var(--saffron);}
+    .tg-btn{display:flex;align-items:center;gap:7px;background:#229ED9;color:#fff;font-size:0.78rem;font-weight:700;padding:7px 14px;border-radius:20px;text-decoration:none;transition:opacity .2s;}
+    .tg-btn:hover{opacity:.85;text-decoration:none;}
+    .tg-btn svg{width:15px;height:15px;fill:#fff;}
+
+    /* HERO */
+    .about-hero{text-align:center;padding:64px 20px 48px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,107,0,0.1) 0%,transparent 70%);}
+    .about-hero .avatar{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--saffron),#FF3D00);display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 20px;box-shadow:0 0 0 4px rgba(255,107,0,0.2);}
+    .about-hero h1{font-family:'Baloo 2',cursive;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#fff;margin-bottom:10px;}
+    .about-hero h1 span{color:var(--saffron);}
+    .about-hero .tagline{font-size:1rem;color:var(--muted);max-width:480px;margin:0 auto;line-height:1.6;}
+
+    /* CONTENT */
+    .page-content{max-width:760px;margin:40px auto 60px;padding:0 20px;display:flex;flex-direction:column;gap:20px;}
+
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 32px;}
+    .card h2{font-family:'Baloo 2',cursive;font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+    .card p{font-size:0.92rem;color:var(--text);line-height:1.75;margin-bottom:12px;}
+    .card p:last-child{margin-bottom:0;}
+
+    /* Mission pillars */
+    .pillars{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:4px;}
+    .pillar{background:rgba(255,107,0,0.07);border:1px solid rgba(255,107,0,0.15);border-radius:12px;padding:16px 18px;}
+    .pillar .pi{font-size:1.5rem;margin-bottom:8px;}
+    .pillar h3{font-family:'Baloo 2',cursive;font-size:0.9rem;font-weight:700;color:#fff;margin-bottom:4px;}
+    .pillar p{font-size:0.8rem;color:var(--muted);margin:0;}
+
+    /* Channel links */
+    .channel-links{display:flex;flex-direction:column;gap:12px;}
+    .channel-btn{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;text-decoration:none;color:#fff;transition:opacity .2s,transform .2s;}
+    .channel-btn:hover{opacity:.9;transform:translateX(4px);text-decoration:none;}
+    .channel-btn.yt{background:linear-gradient(135deg,#c00,#ff0000);}
+    .channel-btn.tg{background:linear-gradient(135deg,#0e6694,#229ED9);}
+    .channel-btn .cb-icon{font-size:1.6rem;flex-shrink:0;}
+    .channel-btn .cb-text h3{font-family:'Baloo 2',cursive;font-size:0.95rem;font-weight:700;margin-bottom:2px;}
+    .channel-btn .cb-text p{font-size:0.75rem;opacity:0.8;margin:0;}
+    .channel-btn .cb-arrow{margin-left:auto;font-size:1.2rem;opacity:0.7;}
+
+    /* What we cover */
+    .cover-list{display:flex;flex-direction:column;gap:10px;}
+    .cover-item{display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,0.04);border-radius:10px;font-size:0.88rem;}
+    .cover-item .ci{font-size:1.1rem;flex-shrink:0;}
+
+    /* Disclaimer */
+    .disclaimer-card{background:rgba(245,200,66,0.07);border:1px solid rgba(245,200,66,0.2);border-radius:16px;padding:22px 28px;}
+    .disclaimer-card h2{color:#F5C842;border-bottom-color:rgba(245,200,66,0.15);}
+    .disclaimer-card p{color:#D4C47A;font-size:0.88rem;}
+
+    footer{background:var(--navy-mid);border-top:1px solid var(--border);text-align:center;padding:28px 20px;}
+    footer p{font-size:0.75rem;color:var(--muted);line-height:1.8;}
+    footer a{color:var(--saffron);}
+
+    @media(max-width:600px){.nav-links{display:none;}.pillars{grid-template-columns:1fr;}.card{padding:20px 18px;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">📋 <span>Sarkari</span> Naukri News</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="jobs/10th-pass.html">10th Pass</a>
+    <a href="jobs/12th-pass.html">12th Pass</a>
+    <a href="jobs/graduate.html">Graduate</a>
+    <a href="about.html" class="active">About</a>
+  </div>
+  <a class="tg-btn" href="#" data-link="telegram" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.832 13.99l-2.98-.929c-.648-.203-.66-.648.136-.961l11.647-4.49c.54-.194 1.016.131.859.611z"/></svg>
+    Join Telegram
+  </a>
+</nav>
+
+<div class="about-hero">
+  <div class="avatar">📋</div>
+  <h1><span>Sarkari Naukri</span> News</h1>
+  <p class="tagline">Helping students across India find government jobs that match their qualification — in simple, clear Hindi.</p>
+</div>
+
+<div class="page-content">
+
+  <!-- About -->
+  <div class="card">
+    <h2>👋 Who We Are</h2>
+    <!-- EDIT: Replace this with your own story -->
+    <p>Sarkari Naukri News is a one-person channel dedicated to making government job information easy to understand for every Indian student — whether you passed Class 10 or hold a University degree.</p>
+    <p>Every day, government recruitment notifications come out in complicated language. Our job is to break them down into simple Hindi — explaining exactly who is eligible, what the selection process looks like, what the salary is, and how to apply step by step.</p>
+    <p>We started this because millions of students miss good job opportunities simply because they couldn't find clear, reliable information in their language. We are here to fix that.</p>
+  </div>
+
+  <!-- Mission -->
+  <div class="card">
+    <h2>🎯 What We Do</h2>
+    <div class="pillars">
+      <div class="pillar"><div class="pi">✅</div><h3>Eligibility First</h3><p>We tell you within seconds if you qualify — age, education, category.</p></div>
+      <div class="pillar"><div class="pi">📋</div><h3>Full Job Details</h3><p>Vacancies, salary, selection process, syllabus — everything in one place.</p></div>
+      <div class="pillar"><div class="pi">🎥</div><h3>Hindi Explanations</h3><p>Every job has a YouTube video explaining it in simple, clear Hindi.</p></div>
+      <div class="pillar"><div class="pi">⚡</div><h3>Instant Alerts</h3><p>New job out? We post on Telegram immediately with the direct link.</p></div>
+    </div>
+  </div>
+
+  <!-- What we cover -->
+  <div class="card">
+    <h2>📂 Jobs We Cover</h2>
+    <div class="cover-list">
+      <div class="cover-item"><span class="ci">🚂</span> Railway Jobs — RRB Group D, NTPC, ALP, RPF</div>
+      <div class="cover-item"><span class="ci">🛡️</span> Police & Defence — SSC GD, CRPF, BSF, Army, Air Force, Navy</div>
+      <div class="cover-item"><span class="ci">📮</span> Post Office — India Post GDS, Postman, MTS</div>
+      <div class="cover-item"><span class="ci">📝</span> SSC Jobs — CGL, CHSL, CPO, Stenographer, MTS</div>
+      <div class="cover-item"><span class="ci">🏦</span> Banking — IBPS PO, Clerk, RBI Assistant, SBI</div>
+      <div class="cover-item"><span class="ci">🇮🇳</span> UPSC — Civil Services, NDA, CDS, CAPF</div>
+      <div class="cover-item"><span class="ci">🏛️</span> State Government — All state PSC and recruitment board jobs</div>
+      <div class="cover-item"><span class="ci">⚡</span> PSU Jobs — NTPC, BHEL, ONGC, SAIL and more</div>
+    </div>
+  </div>
+
+  <!-- Channel links -->
+  <div class="card">
+    <h2>📲 Find Us Here</h2>
+    <div class="channel-links">
+      <a class="channel-btn yt" href="#" data-link="youtube" target="_blank">
+        <span class="cb-icon">▶️</span>
+        <div class="cb-text">
+          <h3>YouTube — Sarkari Naukri News</h3>
+          <p>Full video explanations in Hindi for every government job</p>
+        </div>
+        <span class="cb-arrow">›</span>
+      </a>
+      <a class="channel-btn tg" href="#" data-link="telegram" target="_blank">
+        <span class="cb-icon">📣</span>
+        <div class="cb-text">
+          <h3>Telegram Channel</h3>
+          <p>Instant alerts — new job notifications delivered to your phone</p>
+        </div>
+        <span class="cb-arrow">›</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer-card">
+    <h2>⚠️ Important Disclaimer</h2>
+    <p>Sarkari Naukri News is an informational website only. All job information is sourced from official government recruitment notifications and websites.</p>
+    <p style="margin-top:10px;">We do not charge any fees for any service. We are not responsible for any errors or changes in official notifications after they are published. Always verify the latest details — eligibility, dates, and application process — directly on the official government recruitment website before applying.</p>
+    <p style="margin-top:10px;">Official government sites always end in <strong style="color:#F5C842;">.gov.in</strong> or <strong style="color:#F5C842;">.nic.in</strong>. Never pay anyone to apply for a government job.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    <strong style="color:#fff;">Sarkari Naukri News</strong> — Latest Government Job Alerts in Hindi<br>
+    📺 <a href="#" data-link="youtube">YouTube</a> &nbsp;|&nbsp;
+    📣 <a href="#" data-link="telegram">Telegram</a> &nbsp;|&nbsp;
+    <a href="index.html">Home</a><br><br>
+    © 2026 Sarkari Naukri News. All Rights Reserved.
+  </p>
+</footer>
+
+
+<script>
+// Auto-fill all links from config.js
+(function() {
+  if (typeof SITE_CONFIG === 'undefined') return;
+  document.querySelectorAll('a[data-link="youtube"]').forEach(function(el) {
+    el.href = SITE_CONFIG.youtube;
+  });
+  document.querySelectorAll('a[data-link="telegram"]').forEach(function(el) {
+    el.href = SITE_CONFIG.telegram;
+  });
+  // Share buttons that embed the URL
+  document.querySelectorAll('a[data-link="share-tg"]').forEach(function(el) {
+    var pageUrl = encodeURIComponent(window.location.href);
+    var title = encodeURIComponent(document.title);
+    el.href = 'https://t.me/share/url?url=' + pageUrl + '&text=' + title;
+  });
+  document.querySelectorAll('a[data-link="share-wa"]').forEach(function(el) {
+    var pageUrl = encodeURIComponent(window.location.href);
+    var title = encodeURIComponent(document.title);
+    el.href = 'https://wa.me/?text=' + title + '%20' + pageUrl;
+  });
+})();
+</script>
+
+</body>
+</html>
