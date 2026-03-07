@@ -135,6 +135,8 @@
 // ═══════════════════════════════════════════════
 const JOBS = [
   { title: "Bihar Police Constable Special Branch 2026", dept: "CSBC Bihar Police", posts: "83 Posts", lastDate: "05 Mar 2026", urgent: true, icon: "👮", link: "bihar-police-constable-special-branch-2026.html" },
+  { title: "Bihar Police Constable Operator 2026", dept: "CSBC Bihar Police Radio Organization", posts: "993 Posts", lastDate: "31 Mar 2026", urgent: false, icon: "📡", link: "bihar-police-constable-operator-2026.html" },
+  { title: "Punjab Police Constable Recruitment 2026", dept: "Punjab Police — DGP Office", posts: "3,298 Posts", lastDate: "30 Mar 2026", urgent: false, icon: "👮", link: "punjab-police-constable-2026.html" },
 ];
 
 function getStatus(d,u){if(u)return'urgent';if(!d||d==='Closed'||d==='Rolling Basis'||d==='Check Official Site')return'ok';const p=d.split(' ');if(p.length<3)return'ok';const m={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};const diff=Math.ceil((new Date(parseInt(p[2]),m[p[1]],parseInt(p[0]))-new Date())/(864e5));if(diff<0)return'ok';if(diff<=5)return'urgent';if(diff<=10)return'soon';return'ok';}
